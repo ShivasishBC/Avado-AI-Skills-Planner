@@ -2,8 +2,12 @@ import streamlit as st
 import openai
 import os
 
-def get_openai_client(api_key):
-    return openai.OpenAI(api_key=api_key)
+def get_openai_client(api_key, endpoint):
+    openai.api_type = 'azure'
+    openai.api_key = api_key
+    openai.api_version = '2023-12-01-preview'
+    openai.api_base = endpoint
+    return openai
 
 def gpt_function(client, size, sector):
     """
@@ -33,9 +37,9 @@ def gpt_function(client, size, sector):
                                     """},
                      {"role": "user", "content": f"{user_content}"}]
 
-    response = client.chat.completions.create(
+    response = client.ChatCompletion.create(
         messages=conversation,
-        model="gpt-3.5-turbo",
+        engine="gpt-35-turbo",
     )
     text_response = response.choices[0].message.content
 
@@ -52,9 +56,10 @@ def main():
     - Calls the gpt_function() with the inputs
     - Writes the output of gpt_function()
     """
-    st.sidebar.title("OpenAI API Key")
-    openai_api_key = st.sidebar.text_input("Enter your OpenAI API Key", type="password")
-    client = get_openai_client(openai_api_key)
+    st.sidebar.title("Azure OpenAI API Key and Endpoint")
+    openai_api_key = st.sidebar.text_input("Enter your Azure OpenAI API Key", type="password")
+    openai_endpoint = st.sidebar.text_input("Enter your Azure OpenAI Endpoint")
+    client = get_openai_client(openai_api_key, openai_endpoint)
 
     st.title("AI Skills Planner")
 
