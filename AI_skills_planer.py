@@ -52,10 +52,11 @@ def main():
     - Calls the gpt_function() with the inputs
     - Writes the output of gpt_function()
     """
-    st.title("AI Skills Planner")
-
-    openai_api_key = st.text_input("Enter your OpenAI API Key", type="password")
+    st.sidebar.title("OpenAI API Key")
+    openai_api_key = st.sidebar.text_input("Enter your OpenAI API Key", type="password")
     client = get_openai_client(openai_api_key)
+
+    st.title("AI Skills Planner")
 
     input_list = ["Company Size", "Company Sector"]
 
