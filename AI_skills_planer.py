@@ -23,18 +23,23 @@ def gpt_function(client, size, sector , function):
     Get future recommendations for training or hiring strategies for the following parameters 
     Company Size: {size} People.
     Company Sector: {sector}
-    function{function}(Optional)
+    Business function{function}(Optional)
 """
 
   
     conversation = [{"role": "system", "content": """You are a future AI skills Planner bot.
-                                    - Your role is to identify AI skills gaps in your organization and get recommendations for training or hiring strategies, based on the given parameters Company size , Sector and function(Optional).
+                                    - Your role is to identify AI skills gaps in your organization and get recommendations for training or hiring strategies, based on the given parameters Company size , Sector and function(Optional) in british english.
                                     - You should address skill gaps and inform talent development strategies
                                     
-                                The output should also contain:
-                                    - AI impact on sector summary Skills & Capabilities required to harness AI
-                                    - Next steps (ordered by priority based on AI impact on given sector and perceived maturity levels based on company) Note. skills & capabilities output should be split by business function
-                                    
+                                The output should contain below details with proper format and subheaddings:
+                     
+                                    1. ### AI Impact
+                                      - How AI is changing in (Company Sector) - AI impact on sector summary Skills & Capabilities required to harness AI
+                                    2. ### Skills And Capabilities Needed To Harness AI
+                                      - The Skills And Capabilities needed to harness AI in (Business function)
+                                    3. ### Recomandations
+                                      - Recomandation for training or hiring strategies to address AI skills gapsin (Company Size) and (Company Sector)    
+                                                    
                                     Steps to analyze:
                                     - Analyze current skills inventory
                                     - Forecast future needs
@@ -70,13 +75,12 @@ def main():
     st.title("AI Skills Planner")
 
     description = """
-    #### About the App
-    ###### Identify skills gaps in your orginazation and get recommedations for training or hiring strategies.
+    ###### Identify skills gaps in your organisation and get recommendations for training or hiring strategies.
     """
 
     st.markdown(description , unsafe_allow_html=True)
 
-    input_list = ["Company Size", "Company Sector", "Function(Optional)"]
+    input_list = ["Company Size", "Company Sector", "Business function(Optional)"]
 
     sector = st.text_input(input_list[1])
     size = st.text_input(input_list[0])
@@ -95,3 +99,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+
+
+
+
+
