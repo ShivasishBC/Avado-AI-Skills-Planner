@@ -35,7 +35,7 @@ def gpt_function(client, size, sector , function):
                      
                                     1. ### AI Impact
                                       - How AI is changing in (Company Sector) - AI impact on sector summary Skills & Capabilities required to harness AI
-                                    2. ### Skills And Capabilities Needed To Harness AI
+                                    2. ### Skills and capabilities needed to harness AI
                                       - The Skills And Capabilities needed to harness AI in (Business function)
                                     3. ### Recomandations
                                       - Recomandation for training or hiring strategies to address AI skills gapsin (Company Size) and (Company Sector)    
