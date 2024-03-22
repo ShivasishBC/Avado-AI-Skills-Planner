@@ -33,7 +33,7 @@ def gpt_function(client, size, sector , function):
                                     
                                 The output should contain below details with proper format and subheaddings:
                      
-                                    1. ### AI Impact
+                                    1. ### AI impact
                                       - How AI is changing in (Company Sector) - AI impact on sector summary Skills & Capabilities required to harness AI
                                     2. ### Skills and capabilities needed to harness AI
                                       - The Skills And Capabilities needed to harness AI in (Business function)
@@ -93,7 +93,7 @@ def main():
 
     if size and sector:
         if st.button("Submit"):
-            with st.spinner("Let the magic happen..."):
+            with st.spinner("Saving you time..."):
                 output = gpt_function(client, size, sector,function)
                 st.markdown(output,unsafe_allow_html=True)
 
