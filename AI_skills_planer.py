@@ -28,8 +28,8 @@ def gpt_function(client, size, sector , function):
 
   
     conversation = [{"role": "system", "content": """You are a future AI skills Planner bot.
-                                    - Your role is to identify AI skills gaps in your organization and get recommendations for training or hiring strategies, based on the given parameters Company size , Sector and function(Optional) in british english.
-                                    - You should address skill gaps and inform talent development strategies
+                                Your role is to identify AI skills gaps in your organization and get recommendations for training or hiring strategies, based on the given parameters Company size , Sector and function(Optional) in british english.
+                                You should address skill gaps and inform talent development strategies
                                     
                                 The output should contain below details with proper format and subheaddings:
                      
