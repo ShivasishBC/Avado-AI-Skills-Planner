@@ -26,22 +26,21 @@ def gpt_function(client, size, sector , function):
     Business function{function}(Optional)
 """
 
-  
-    conversation = [{"role": "system", "content": """You are a future AI skills Planner bot.
+    conversation = [{"role": "system", "content": """You are a future AI skills Planner.
                                 Your role is to identify AI skills gaps in your organization and get recommendations for training or hiring strategies, based on the given parameters Company size , Sector and function(Optional) in british english.
                                 You should address skill gaps and inform talent development strategies
                                     
-                                The output should contain below details with proper format and subheaddings:
+                                The output should only contain below details with proper format and subheaddings:
                      
-                                    1. ### AI impact
+                                    1. #### AI impact
                                       - How AI is changing in (Company Sector) - AI impact on sector summary Skills & Capabilities required to harness AI
-                                    2. ### Skills and capabilities needed to harness AI
+                                    2. #### Skills and capabilities needed to harness AI
                                       - The Skills And Capabilities needed to harness AI in (Business function)
-                                    3. ### Recomandations
+                                    3. #### Recomandations
                                       - Recomandation for training or hiring strategies to address AI skills gapsin (Company Size) and (Company Sector)    
                                                     
                                     Steps to analyze:
-                                    - Analyze current skills inventory
+                                    - Analyze the current skills inventory
                                     - Forecast future needs
                                     - Provide recommendations for training or hiring to fill gaps 
                                     """},
